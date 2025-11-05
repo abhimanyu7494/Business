@@ -1,55 +1,39 @@
-import { useState, useEffect } from "react";
-import Img2 from "../assets/images/2.jpeg";
-import Img3 from "../assets/images/3.jpeg";
-import Img4 from "../assets/images/4.jpeg";
-import Video1 from "../assets/images/1.mp4";
-
-const media = [
-  { type: "video", src: Video1 },
-  { type: "image", src: Img2 },
-  { type: "image", src: Img3 },
-  { type: "image", src: Img4 },
-];
+import React from "react";
+import Video1 from "../assets/images/Welcome.mp4";
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % media.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Media */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        {media[currentIndex].type === "video" ? (
-          <video
-            src={media[currentIndex].src}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover transition-opacity duration-1000"
-          />
-        ) : (
-          <img
-            src={media[currentIndex].src}
-            alt={`Hero ${currentIndex + 1}`}
-            className="w-full h-full object-cover transition-opacity duration-1000"
-          />
-        )}
-        <div className="absolute inset-0 bg-black/40"></div> {/* Overlay */}
+    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+      {/* Background Blur Layer for depth */}
+      <div className="absolute inset-0">
+        <video
+          src={Video1}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40"
+        />
       </div>
 
-      {/* Centered Content */}
-      <div className="relative z-10 text-center px-6 mt-40">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+      {/* Main Video - fully visible and centered */}
+      <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+        <video
+          src={Video1}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="max-w-full max-h-full object-contain transition-all duration-700 rounded-lg"
+        />
+      </div>
+
+      {/* Text Content */}
+      <div className="relative z-10 text-center px-6 md:px-12 mt-20 md:mt-32">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
           Build Stunning Websites with A3 Technos
         </h1>
-        <p className="text-gray-300 text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+        <p className="text-gray-300 text-base md:text-lg mb-6 max-w-2xl mx-auto">
           We design and develop modern, fast, and user-friendly websites that
           help individuals and businesses grow online.
         </p>
@@ -71,7 +55,7 @@ const Hero = () => {
       </div>
 
       {/* Down Arrow */}
-      <div className="absolute bottom-8 animate-bounce text-white/80">
+      <div className="absolute bottom-8 animate-bounce text-white/80 z-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-8 mx-auto"
