@@ -66,7 +66,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white hover:text-yellow-200 transition z-10"
+          className="md:hidden text-white hover:text-yellow-200 transition z-20 p-2 rounded-md bg-black/30 backdrop-blur-sm"
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
