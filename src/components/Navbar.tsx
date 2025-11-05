@@ -22,7 +22,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full z-50 shadow-lg border-b border-gray-200 overflow-hidden bg-transparent backdrop-blur-lg"
     >
-      {/* 🔥 Smoky Animated Background (No gradient) */}
+      {/* 🔥 Smoky Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute w-72 h-72 bg-white/10 rounded-full filter blur-3xl animate-float top-[-20%] left-[-10%]"></div>
         <div className="absolute w-72 h-72 bg-white/10 rounded-full filter blur-3xl animate-float-slow top-[10%] left-[70%]"></div>
@@ -30,9 +30,9 @@ const Navbar = () => {
       </div>
 
       {/* Navbar Content */}
-      <div className="relative max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-        {/* Logo Section */}
-        <Link to="/" className="flex items-center gap-2 z-10">
+      <div className="relative max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-2 z-20">
           <img
             src="/logo.png"
             alt="A3T Technos Logo"
@@ -44,7 +44,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-6 font-medium z-10">
+        <div className="hidden md:flex gap-6 font-medium z-20">
           {navItems.map((item) => (
             <NavLink
               key={item.path}
@@ -66,7 +66,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-white hover:text-yellow-200 transition z-20 p-2 rounded-md bg-black/30 backdrop-blur-sm"
+          className="md:hidden z-20 p-2 rounded-md bg-black/30 backdrop-blur-sm text-white hover:text-yellow-200 transition"
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -78,7 +78,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden px-6 pb-4 border-t border-gray-200 shadow-md relative z-10 bg-black/60 backdrop-blur-xl"
+          className="md:hidden px-4 pb-4 border-t border-gray-200 shadow-md relative z-10 bg-black/60 backdrop-blur-xl"
         >
           <div className="flex flex-col gap-4 mt-2 font-medium">
             {navItems.map((item) => (
