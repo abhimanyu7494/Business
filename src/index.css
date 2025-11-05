@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f0f4f8; /* light gray for visible smoke */
+  color: #1f2937; /* dark text for contrast */
+  font-family: 'Poppins', sans-serif;
+}
