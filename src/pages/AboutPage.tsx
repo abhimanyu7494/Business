@@ -22,13 +22,17 @@ import {
   SiWordpress,
 } from "react-icons/si";
 
-// 🖼 How I Work Images
-import step1 from "../assets/images/how i work 1.jpeg";
-import step2 from "../assets/images/how i work 2.jpeg";
-import step3 from "../assets/images/how i work 3.jpeg";
-import step4 from "../assets/images/how i work 4.jpeg";
+// ✅ Importing all images correctly (React standard way)
+import profileImg from "../assets/images/profile.jpg";
+import techStack from "../assets/images/tech-stack.png";
+import step1 from "../assets/images/How i work 1.jpeg";
+import step2 from "../assets/images/How i work 2.jpeg";
+import step3 from "../assets/images/How i work 3.jpeg";
+import step4 from "../assets/images/How i work 4.jpeg";
+import achievement from "../assets/images/achievement.png";
+import handshake from "../assets/images/handshake.png";
 
-const About = () => {
+const AboutPage = () => {
   return (
     <section id="about" className="bg-white text-gray-800">
       {/* 🧭 Section 1: Introduction */}
@@ -72,7 +76,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
         >
           <img
-            src="/src/assets/images/profile.jpg"
+            src={profileImg}
             alt="Abhimanyu - A3 Technos"
             className="object-cover w-full h-full"
           />
@@ -98,7 +102,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* 🧰 Section 3: Skills (Updated with Real Colors + Animation) */}
+      {/* 🧰 Section 3: Skills */}
       <div className="max-w-6xl mx-auto py-20 px-6 flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1">
           <h3 className="text-3xl font-bold text-[#007BFF] mb-6">
@@ -133,20 +137,14 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <img
-            src="/src/assets/images/tech-stack.png"
-            alt="Tech Stack"
-            className="max-w-xs w-full"
-          />
+          <img src={techStack} alt="Tech Stack" className="max-w-xs w-full" />
         </motion.div>
       </div>
 
-      {/* 💬 Section 4: Work Approach (Updated with images) */}
+      {/* 💬 Section 4: Work Approach */}
       <div className="bg-gray-50 py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h3 className="text-3xl font-bold text-[#007BFF] mb-10">
-            How I Work
-          </h3>
+          <h3 className="text-3xl font-bold text-[#007BFF] mb-10">How I Work</h3>
 
           <div className="space-y-16">
             {[
@@ -180,17 +178,13 @@ const About = () => {
                   i % 2 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Text */}
                 <div className="flex-1 text-center md:text-left">
                   <h4 className="text-xl font-semibold mb-2 text-[#007BFF]">
                     {i + 1}️⃣ {title}
                   </h4>
-                  <p className="text-gray-700 text-base sm:text-lg">
-                    {desc}
-                  </p>
+                  <p className="text-gray-700 text-base sm:text-lg">{desc}</p>
                 </div>
 
-                {/* Image */}
                 <motion.img
                   src={img}
                   alt={title}
@@ -218,31 +212,11 @@ const About = () => {
           What I Believe In
         </h3>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <Value
-            icon={<FaLock />}
-            title="Privacy"
-            desc="Your data stays yours, always."
-          />
-          <Value
-            icon={<FaClock />}
-            title="Timeliness"
-            desc="I value your time and deliver on schedule."
-          />
-          <Value
-            icon={<FaHeart />}
-            title="Client First"
-            desc="I treat every project as if it’s my own brand."
-          />
-          <Value
-            icon={<FaTrophy />}
-            title="Quality"
-            desc="Every line of code matters."
-          />
-          <Value
-            icon={<FaHandshake />}
-            title="Transparency"
-            desc="I communicate clearly — no hidden charges or surprises."
-          />
+          <Value icon={<FaLock />} title="Privacy" desc="Your data stays yours, always." />
+          <Value icon={<FaClock />} title="Timeliness" desc="I value your time and deliver on schedule." />
+          <Value icon={<FaHeart />} title="Client First" desc="I treat every project as if it’s my own brand." />
+          <Value icon={<FaTrophy />} title="Quality" desc="Every line of code matters." />
+          <Value icon={<FaHandshake />} title="Transparency" desc="I communicate clearly — no hidden charges or surprises." />
         </div>
       </div>
 
@@ -259,11 +233,7 @@ const About = () => {
             <li>🧩 <strong>50+</strong> Custom features built</li>
           </ul>
         </div>
-        <img
-          src="/src/assets/images/achievement.png"
-          alt="Achievements"
-          className="w-64 h-64 object-contain"
-        />
+        <img src={achievement} alt="Achievements" className="w-64 h-64 object-contain" />
       </div>
 
       {/* ✉ Section 7: CTA */}
@@ -281,17 +251,17 @@ const About = () => {
             href="/start"
             className="bg-[#00C48C] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#009f73] transition w-full sm:w-auto text-center"
           >
-            🟢 Start Your Project
+             Start Your Project
           </a>
           <a
             href="/contact"
             className="bg-[#007BFF] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#0062cc] transition w-full sm:w-auto text-center"
           >
-            🔵 Contact Me Now
+            Contact Me Now
           </a>
         </div>
         <img
-          src="/src/assets/images/handshake.png"
+          src={handshake}
           alt="Collaboration"
           className="mx-auto mt-10 w-56 sm:w-64 h-56 sm:h-64 object-contain"
         />
@@ -300,7 +270,7 @@ const About = () => {
   );
 };
 
-// 🌈 Skill Component with Animation & Color
+// 🌈 Skill Component
 const Skill = ({ icon, text, color }) => (
   <motion.div
     className="flex flex-col items-center justify-center bg-white shadow-md rounded-lg py-5 hover:shadow-lg transition transform hover:-translate-y-1"
@@ -313,7 +283,7 @@ const Skill = ({ icon, text, color }) => (
   </motion.div>
 );
 
-// 🌟 Values Component
+// 🌟 Value Component
 const Value = ({ icon, title, desc }) => (
   <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
     <div className="text-3xl text-[#00C48C] mb-3 flex justify-center">
@@ -324,4 +294,4 @@ const Value = ({ icon, title, desc }) => (
   </div>
 );
 
-export default About;
+export default AboutPage;
