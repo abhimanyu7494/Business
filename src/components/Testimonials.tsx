@@ -5,7 +5,7 @@ import { testimonials } from "../data/testimonials";
 const Testimonials: React.FC = () => {
   const controls = useAnimation();
   const [isPaused, setIsPaused] = useState(false);
-  const [speed, setSpeed] = useState(60); // duration in seconds
+  const speed = 240; // slower scroll
 
   useEffect(() => {
     if (!isPaused) {
@@ -25,12 +25,24 @@ const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 px-6 relative overflow-hidden bg-gradient-to-r from-gray-100 via-gray-200/50 to-gray-100"
+      className="py-20 px-6 relative overflow-hidden bg-gray-50"
     >
-      <h2 className="text-4xl font-bold mb-10 text-black text-center z-10 relative">
+      {/* Animated gradient blobs */}
+      <motion.div
+        className="absolute inset-0 -z-20"
+        animate={{ x: ["0%", "25%", "0%"] }}
+        transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+      >
+        <div className="absolute w-[200%] h-full bg-gradient-to-r from-green-300 via-blue-200 to-purple-300 opacity-20 rounded-full filter blur-3xl -top-32 -left-64"></div>
+        <div className="absolute w-[200%] h-full bg-gradient-to-r from-pink-300 via-yellow-200 to-indigo-300 opacity-20 rounded-full filter blur-2xl -bottom-32 -right-64"></div>
+      </motion.div>
+
+      {/* Heading */}
+      <h2 className="text-4xl font-bold mb-10 text-black text-center relative z-10">
         What Clients Say
       </h2>
 
+      {/* Carousel */}
       <motion.div
         className="flex gap-6 w-max relative z-10 cursor-grab"
         animate={controls}
@@ -43,36 +55,30 @@ const Testimonials: React.FC = () => {
         onDragEnd={() => setIsPaused(false)}
       >
         {testimonials.concat(testimonials).map((t, i) => (
-          <div
+          <motion.div
             key={i}
-            className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl min-w-[280px] flex-shrink-0 shadow-xl transform transition-all hover:scale-105"
+            className="relative bg-gradient-to-br from-green-50 via-white to-blue-50 backdrop-blur-sm p-6 rounded-2xl min-w-[280px] flex-shrink-0 shadow-xl shadow-green-200/30 border border-white/30 overflow-hidden"
+            initial={{ opacity: 0, y: 20, rotate: -1 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: i * 0.2 }}
+            whileHover={{ scale: 1.05, rotate: 1, boxShadow: "0 20px 40px rgba(0,255,128,0.2)" }}
           >
+            {/* Floating light effect */}
+            <motion.div
+              className="absolute w-20 h-20 bg-green-200/40 rounded-full blur-3xl -top-10 -right-10 pointer-events-none"
+              animate={{ y: [0, -8, 0], x: [0, 6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+
             <p className="italic text-green-600 text-sm mb-4 leading-relaxed">
               “{t.feedback}”
             </p>
             <h4 className="font-semibold text-black text-base mb-1">{t.name}</h4>
             <span className="text-xs text-gray-600">{t.role}</span>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
-
-      {/* Speed Control Buttons */}
-      <div className="flex justify-center gap-4 mt-10">
-        <button
-          onClick={() => setSpeed((prev) => Math.max(prev - 10, 10))}
-          className="w-10 h-10 bg-green-500 text-white font-bold rounded-full hover:bg-green-600 transition flex items-center justify-center"
-        >
-          +
-        </button>
-        <button
-          onClick={() => setSpeed((prev) => prev + 10)}
-          className="w-10 h-10 bg-red-500 text-white font-bold rounded-full hover:bg-red-600 transition flex items-center justify-center"
-        >
-          -
-        </button>
-      </div>
-
-      <div className="absolute inset-0 bg-gray-200/10 pointer-events-none rounded-3xl"></div>
     </section>
   );
 };

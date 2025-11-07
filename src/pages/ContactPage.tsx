@@ -79,7 +79,7 @@ const ContactPage = () => {
             className="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:bg-green-700 transition transform hover:scale-105"
             whileHover={{ scale: 1.05 }}
           >
-            🟢 Let’s Talk
+            Let’s Talk
           </motion.a>
         </div>
 
@@ -107,7 +107,7 @@ const ContactPage = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl font-semibold text-green-600 mb-4 text-center"
         >
-          Send Us a Message 💬
+          Send Us a Message 
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
@@ -233,10 +233,10 @@ const ContactPage = () => {
           </p>
           <div className="flex gap-4">
             <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition transform hover:scale-105">
-              🟢 Start Project Now
+            Start Project Now
             </button>
             <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">
-              🔵 Call Me
+            Call Me
             </button>
           </div>
         </div>

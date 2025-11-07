@@ -39,7 +39,7 @@ const Navbar = () => {
             className="w-10 h-10 object-contain drop-shadow-lg"
           />
           <span className="text-2xl font-bold text-white hover:text-gray-100 transition">
-            A3 <span className="text-green-500">Technos</span>
+            A3 T<span className="text-green-500">echnos</span>
           </span>
         </Link>
 

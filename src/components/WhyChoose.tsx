@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
-
-// Temporary placeholder image
-const whyChooseImg = "https://via.placeholder.com/400x400?text=Why+Choose";
+import whyChooseImg from "../assets/images/whychoos.jpeg"; // ✅ Correct import
 
 const WhyChoose: React.FC = () => {
   const reasons = [
@@ -36,52 +34,79 @@ const WhyChoose: React.FC = () => {
   return (
     <section
       id="why-choose"
-      className="py-20 px-6 bg-white text-gray-800 flex flex-col md:flex-row items-center justify-center overflow-hidden"
+      className="py-20 px-6 bg-gradient-to-b from-white via-gray-50 to-white text-gray-800 
+                 flex flex-col-reverse md:flex-row items-center justify-center 
+                 gap-12 md:gap-20 overflow-hidden"
     >
       {/* 💡 Left Side Text */}
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -60 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-full md:w-1/2 mb-12 md:mb-0"
+        viewport={{ once: true }}
+        className="w-full md:w-1/2"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 text-center md:text-left"
+        >
           Why Clients Choose Us
-        </h2>
-        <p className="text-lg text-gray-600 mb-8">
-          Your goals come first. Always.
-        </p>
+        </motion.h2>
 
-        <div className="space-y-5">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-lg text-gray-600 mb-10 text-center md:text-left"
+        >
+          Your goals come first. Always.
+        </motion.p>
+
+        <div className="space-y-6">
           {reasons.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="flex items-start gap-4"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03 }}
+              className="flex items-start gap-4 bg-white shadow-md hover:shadow-lg 
+                         rounded-xl p-4 transition-all duration-300"
             >
               <span className="text-3xl">{item.icon}</span>
               <div>
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm sm:text-base">{item.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </motion.div>
 
-      {/* 🖼️ Right Side Illustration */}
+      {/* 🖼️ Right Side Image with Soft Animation */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
         className="w-full md:w-1/2 flex justify-center"
       >
-        <img
+        <motion.img
           src={whyChooseImg}
           alt="Why Choose A3 Technos"
-          className="w-80 md:w-[400px] rounded-xl shadow-lg"
+          className="w-100 sm:w-80 md:w-[400px] rounded-2xl shadow-2xl object-cover"
+          loading="lazy"
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
         />
       </motion.div>
     </section>
