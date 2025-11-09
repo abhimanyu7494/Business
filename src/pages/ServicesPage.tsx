@@ -6,9 +6,9 @@ import "../HeroBackground.css"; // For gradient and floating shapes
 
 // Images imports
 import DevWorkspaceImg from "../assets/images/developer-workspaces.jpeg";
-import PortfolioImg from "../assets/images/portfolio-mockup.svg";
-import BusinessImg from "../assets/images/business-team.svg";
-import EcomImg from "../assets/images/ecommerce.svg";
+import PortfolioImg from "../assets/images/portfolio-mockup.jpeg";
+import BusinessImg from "../assets/images/business-team.jpeg";
+import EcomImg from "../assets/images/ecommerce.jpeg";
 import CustomSolutionImg from "../assets/images/Custom web solution.webp";
 import WebsiteRedesignImg from "../assets/images/website redesign.jpg";
 import MaintenanceImg from "../assets/images/website-maintenance.jpeg";
