@@ -15,7 +15,6 @@ const Projects = () => {
     animate: { opacity: 1, x: 0, y: 0, scale: 1 },
   });
 
-  // Floating particle animation helper
   const floatingParticle = (size: number, delay: number, top: string, left: string, color: string) => (
     <motion.div
       className={`absolute rounded-full ${color}`}
@@ -27,7 +26,6 @@ const Projects = () => {
 
   return (
     <section className="relative py-24 px-6 overflow-hidden bg-white">
-      {/* 🌈 Animated Gradient Background */}
       <div className="absolute inset-0 -z-10">
         <motion.div
           animate={{ rotate: 360 }}
@@ -39,7 +37,6 @@ const Projects = () => {
           transition={{ repeat: Infinity, duration: 180, ease: "linear" }}
           className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 rounded-full opacity-20 blur-3xl"
         />
-        {/* Floating particles */}
         {floatingParticle(20, 0, "10%", "15%", "bg-purple-300/40")}
         {floatingParticle(30, 2, "30%", "70%", "bg-pink-300/30")}
         {floatingParticle(25, 1, "60%", "40%", "bg-green-300/30")}
@@ -48,7 +45,6 @@ const Projects = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto text-center z-10">
-        {/* 🔹 Heading */}
         <motion.h2
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +54,6 @@ const Projects = () => {
           Some of My Recent Work
         </motion.h2>
 
-        {/* 🔸 Subheading */}
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +63,6 @@ const Projects = () => {
           Every project is built with care, creativity, and precision.
         </motion.p>
 
-        {/* 🖼️ Projects Grid */}
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {displayedProjects.map((p, i) => (
             <motion.div
@@ -97,7 +91,6 @@ const Projects = () => {
               <div className="p-6 text-center sm:text-left">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{p.title}</h3>
 
-                {/* 🟢 Buttons */}
                 <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-3 mt-3">
                   {p.live && (
                     <a
@@ -122,7 +115,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* 🔵 View More Projects Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -13,16 +13,25 @@ const ScrollTop = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const scrollTop = () =>
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <button
       onClick={scrollTop}
-      className={`fixed bottom-8 right-8 bg-blue-500 text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 ${
-        show ? "block" : "hidden"
-      }`}
+      className={`
+        fixed bottom-16 left-4
+        bg-gradient-to-r from-green-400 to-blue-500
+        text-white p-3 rounded-full shadow-lg
+        transform transition-transform duration-300
+        hover:scale-110 hover:rotate-6
+        animate-bounce
+        z-50
+        ${show ? "block" : "hidden"}
+      `}
+      aria-label="Scroll to Top"
     >
-      <FaArrowUp />
+      <FaArrowUp size={18} />
     </button>
   );
 };

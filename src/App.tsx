@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
 import ThemeToggle from "./components/ThemeToggle";
-
+import WhatsAppButton from "./components/WhatsAppButton";
 // Pages
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
@@ -36,6 +36,7 @@ function App() {
 
       {/* Scroll to Top Button */}
       <ScrollTop />
+      <WhatsAppButton />
 
       {/* Footer */}
       <Footer />

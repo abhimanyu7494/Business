@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 
@@ -6,7 +5,6 @@ const Footer = () => {
   return (
     <footer className="bg-[#0D1B2A] text-white px-6 py-12">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-        {/* Branding / About */}
         <div>
           <h2 className="text-3xl font-bold mb-3 text-[#00C48C]">A3 Technos</h2>
           <p className="text-gray-300">
@@ -14,7 +12,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
@@ -26,7 +23,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact</h3>
           <p className="text-gray-300 mb-2">📍 Patna, Bihar, India</p>
@@ -34,7 +30,6 @@ const Footer = () => {
           <p className="text-gray-300">✉ abhimanyukrpandey@zohomail.in</p>
         </div>
 
-        {/* Social + Newsletter */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4 mb-5">
@@ -61,7 +56,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="mt-12 text-center text-gray-500 text-sm border-t border-gray-700 pt-6 flex flex-col sm:flex-row justify-center items-center gap-2">
         <span>© 2025 A3 Technos. All Rights Reserved.</span>
         <span>|</span>

@@ -131,7 +131,7 @@ const ServicesPage: React.FC = () => {
             className="flex justify-center"
           >
             <img
-              src="/images/developer-workspace.svg"
+              src="..assets/images/src/assets/images/developer-workspaces.jpeg"
               alt="Developer working illustration"
               className="w-full max-w-md drop-shadow-lg"
             />
@@ -202,7 +202,7 @@ const ServicesPage: React.FC = () => {
               "Scalable and secure setup",
             ]}
             buttonText="Build a Custom Solution"
-            img="/images/custom-dev.svg"
+            img="src\assets\images\Custom web solution.webp"
             reverse
           />
 
@@ -216,7 +216,7 @@ const ServicesPage: React.FC = () => {
               "Faster loading speed",
             ]}
             buttonText="Upgrade My Website"
-            img="/images/website-redesign.svg"
+            img="src\assets\images\website redesign.jpg"
           />
 
           <ServiceBlock
@@ -229,7 +229,7 @@ const ServicesPage: React.FC = () => {
               "24/7 support",
             ]}
             buttonText="Get Maintenance Plan"
-            img="/images/maintenance.svg"
+            img="src\assets\images\website-maintenance.jpeg"
             reverse
           />
         </div>
@@ -292,7 +292,7 @@ const ServicesPage: React.FC = () => {
             </ul>
           </div>
           <div className="flex justify-center">
-            <img src="/images/handshake.svg" alt="Team handshake" className="w-full max-w-md" />
+            <img src="..\assets\images\tech-stack.png" alt="Team handshake" className="w-full max-w-md" />
           </div>
         </div>
       </section>

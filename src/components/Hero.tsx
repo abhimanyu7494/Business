@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
-// 💡 If this import doesn't work, move Welcome.mp4 to public folder
-// and use src="/assets/Welcome.mp4"
 import Video1 from "../assets/images/Welcome.mp4";
 
 const Hero: React.FC = () => {
@@ -27,7 +25,6 @@ const Hero: React.FC = () => {
 
     tryPlay();
 
-    // Reattempt when tab becomes visible again
     const onVisibility = () => {
       if (document.visibilityState === "visible") tryPlay();
     };
@@ -36,9 +33,9 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-      {/* 🔹 Background Blur Video */}
-      <div className="absolute inset-0 pointer-events-none">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <video
           ref={videoRef}
           autoPlay
@@ -46,7 +43,7 @@ const Hero: React.FC = () => {
           muted
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover blur-2xl opacity-40"
+          className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto -translate-x-1/2 -translate-y-1/2 object-cover"
           onLoadedData={() => console.log("Background video loaded")}
           onError={(e) => {
             console.error("Background video error:", e);
@@ -58,22 +55,11 @@ const Hero: React.FC = () => {
         </video>
       </div>
 
-      {/* 🔹 Foreground Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center bg-black/60 pointer-events-none">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="max-w-full max-h-full object-contain transition-all duration-700 rounded-lg"
-        >
-          <source src={Video1} type="video/mp4" />
-        </video>
-      </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* 🔹 Text & Typewriter Section */}
-      <div className="relative z-10 text-center px-4 md:px-8 mt-20 md:mt-32">
+      {/* Text Content */}
+      <div className="relative z-10 text-center px-4 md:px-8">
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,7 +99,7 @@ const Hero: React.FC = () => {
         )}
       </div>
 
-      {/* 🔹 Down Arrow */}
+      {/* Scroll Down Arrow */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -136,7 +122,6 @@ const Hero: React.FC = () => {
         </svg>
       </motion.div>
 
-      {/* 🔹 Animation Style */}
       <style>{`
         @keyframes pulseSlow {
           0%, 100% { text-shadow: 0 0 20px rgba(255,255,255,0.3); opacity: 1; }

@@ -22,16 +22,13 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full z-50 shadow-lg border-b border-gray-200 overflow-hidden bg-transparent backdrop-blur-lg"
     >
-      {/* 🔥 Smoky Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute w-72 h-72 bg-white/10 rounded-full filter blur-3xl animate-float top-[-20%] left-[-10%]"></div>
         <div className="absolute w-72 h-72 bg-white/10 rounded-full filter blur-3xl animate-float-slow top-[10%] left-[70%]"></div>
         <div className="absolute w-72 h-72 bg-white/20 rounded-full filter blur-2xl animate-float top-[50%] left-[40%]"></div>
       </div>
 
-      {/* Navbar Content */}
       <div className="relative max-w-6xl mx-auto flex justify-between items-center px-4 md:px-6 py-4">
-        {/* Logo */}
         <Link to="/" className="flex items-center gap-2 z-20">
           <img
             src="/logo.png"
@@ -43,7 +40,6 @@ const Navbar = () => {
           </span>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 font-medium z-20">
           {navItems.map((item) => (
             <NavLink
@@ -63,7 +59,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden z-20 p-2 rounded-md bg-black/30 backdrop-blur-sm text-white hover:text-yellow-200 transition"
@@ -72,7 +67,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Dropdown */}
       {open && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
