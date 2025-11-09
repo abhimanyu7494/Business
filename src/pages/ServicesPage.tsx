@@ -4,6 +4,16 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../HeroBackground.css"; // For gradient and floating shapes
 
+// Images imports
+import DevWorkspaceImg from "../assets/images/developer-workspaces.jpeg";
+import PortfolioImg from "../assets/images/portfolio-mockup.svg";
+import BusinessImg from "../assets/images/business-team.svg";
+import EcomImg from "../assets/images/ecommerce.svg";
+import CustomSolutionImg from "../assets/images/Custom web solution.webp";
+import WebsiteRedesignImg from "../assets/images/website redesign.jpg";
+import MaintenanceImg from "../assets/images/website-maintenance.jpeg";
+import TechStackImg from "../assets/images/tech-stack.png";
+
 // Reusable components
 interface ServiceBlockProps {
   title: string;
@@ -131,7 +141,7 @@ const ServicesPage: React.FC = () => {
             className="flex justify-center"
           >
             <img
-              src="..assets/images/src/assets/images/developer-workspaces.jpeg"
+              src={DevWorkspaceImg}
               alt="Developer working illustration"
               className="w-full max-w-md drop-shadow-lg"
             />
@@ -162,7 +172,7 @@ const ServicesPage: React.FC = () => {
               "Fast & mobile-friendly",
             ]}
             buttonText="Get Your Portfolio Website"
-            img="/images/portfolio-mockup.svg"
+            img={PortfolioImg}
           />
 
           <ServiceBlock
@@ -175,7 +185,7 @@ const ServicesPage: React.FC = () => {
               "Secure hosting & modern design",
             ]}
             buttonText="Get a Business Website Quote"
-            img="/images/business-team.svg"
+            img={BusinessImg}
             reverse
           />
 
@@ -189,7 +199,7 @@ const ServicesPage: React.FC = () => {
               "Responsive design for all devices",
             ]}
             buttonText="Start Selling Online"
-            img="/images/ecommerce.svg"
+            img={EcomImg}
           />
 
           <ServiceBlock
@@ -202,7 +212,7 @@ const ServicesPage: React.FC = () => {
               "Scalable and secure setup",
             ]}
             buttonText="Build a Custom Solution"
-            img="src\assets\images\Custom web solution.webp"
+            img={CustomSolutionImg}
             reverse
           />
 
@@ -216,7 +226,7 @@ const ServicesPage: React.FC = () => {
               "Faster loading speed",
             ]}
             buttonText="Upgrade My Website"
-            img="src\assets\images\website redesign.jpg"
+            img={WebsiteRedesignImg}
           />
 
           <ServiceBlock
@@ -229,7 +239,7 @@ const ServicesPage: React.FC = () => {
               "24/7 support",
             ]}
             buttonText="Get Maintenance Plan"
-            img="src\assets\images\website-maintenance.jpeg"
+            img={MaintenanceImg}
             reverse
           />
         </div>
@@ -292,7 +302,7 @@ const ServicesPage: React.FC = () => {
             </ul>
           </div>
           <div className="flex justify-center">
-            <img src="..\assets\images\tech-stack.png" alt="Team handshake" className="w-full max-w-md" />
+            <img src={TechStackImg} alt="Team handshake" className="w-full max-w-md" />
           </div>
         </div>
       </section>
